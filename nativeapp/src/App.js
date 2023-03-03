@@ -15,7 +15,7 @@ function App() {
   let [bgColor, setBgColor] = useState("white");
 
   let changeBg = () => {
-    let newBg = bgColor == "white" ? "red" : "#87CEFA";
+    let newBg = bgColor == "" ? "red" : "#87CEFA";
     setBgColor(newBg);
   };
 
