@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import "./State.css";
 
 function State() {
-  let user = "yejin1";
+  let user = "youngjae1";
   // react에서 변수처럼 자료를 보관할 수 있는 state문법
   let [count, setCount] = useState(0);
   let [like, setLike] = useState([0, 0, 0]);
@@ -15,8 +16,8 @@ function State() {
     "DW아카데미 203호",
   ]);
   let [bgColor, setbgColor] = useState("white");
-  let [name, setName] = useState(["이예진1", "이예진2", "이예진3"]);
-  let [ye, setYe] = ["yejin", "lee", "lala"];
+  let [name, setName] = useState(["김영재1", "김영재2", "김영재3"]);
+  let [ye, setYe] = ["youngjae", "kim", "lala"];
 
   let changeBg = () => {
     let newBg = bgColor == "white" ? "red" : "white";
@@ -94,19 +95,19 @@ function State() {
       {/* <div className="list">
         <h4>{title[0]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
-        <p>안녕하세요. 저는 이예진입니다.</p>
+        <p>안녕하세요. 저는 김영재입니다.</p>
       </div> */}
 
       {/* <div className="list">
         <h4>{title[1]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
-        <p>안녕하세요. 저는 이예진입니다.</p>
+        <p>안녕하세요. 저는 김영재입니다.</p>
       </div>
 
       <div className="list">
         <h4>{title[2]}</h4>
         <span onClick={()=>{setLike(like + 1)}}>👍 {like}</span>
-        <p>안녕하세요. 저는 이예진입니다.</p>
+        <p>안녕하세요. 저는 김영재입니다.</p>
       </div> */}
 
       <button
