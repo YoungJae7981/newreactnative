@@ -49,12 +49,25 @@ function App() {
   // State 주의할 점
 
   // State는 기존 값을 잃어버리지 않고 기억하고 있다.
+
+  let num1 = [1, 2, 3, 4];
+  let name = ["영재", "영재", "영재", "영재"];
+
   return (
     <div className="App">
-      <Box num="1" />
-      <Box num="2" />
-      <Box num="3" />
-      <Box num="4" />
+      <Box name="영재" num="1" />
+      <Box name="영재" num="2" />
+      <Box name="영재" num="3" />
+      <Box name="영재" num="4" />
+
+      {name.map(function (a, i) {
+        return (
+          <div className="box" key={i}>
+            <h1>Box{num1[i]}</h1>
+            <h2>{name[i]}</h2>
+          </div>
+        );
+      })}
     </div>
   );
 }
