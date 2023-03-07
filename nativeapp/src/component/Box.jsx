@@ -14,8 +14,8 @@ import "./Box.css";
 const Box = (props) => {
   return (
     <div className="box">
-      <h1>Box{props.num}</h1>
-      <h2>{props.name}</h2>
+      <h1>라라라{props.name4}</h1>
+      <h2>{props.name5}</h2>
     </div>
   );
 };
