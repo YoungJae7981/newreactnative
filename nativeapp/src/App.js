@@ -14,17 +14,6 @@ function App() {
   return (
     <div className="App">
       <CommentList />
-      {/* {
-      lalelo.map(function(a, i){
-        return (
-          <div className='box' key={i}>
-            <img src="./image/0.gif" alt="moku" />
-            <h1></h1>
-            <h2></h2>
-          </div>
-        )
-      })
-      } */}
     </div>
   );
 }

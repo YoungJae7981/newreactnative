@@ -3,29 +3,42 @@ import Comment from "./Comment";
 
 const comments = [
   {
-    name: "영재",
-    comment: "안녕하세요. 김영재입니다.",
+    name: "김영재1",
+    comment: "안녕하세요. 김영재 입니다.",
   },
   {
-    name: "김영재",
-    comment: "리액트 어렵습니다",
+    name: "김영재2",
+    comment: "리액트 재밌다~!",
   },
   {
-    name: "Youngjae",
-    comment: "으아아아아악",
+    name: "김영재3",
+    comment: "리액트 재미없어!!",
   },
 ];
 
-function CommentList() {
+function App() {
+  const [comments, setComments] = useState([]);
+
+  const handleRemoveComment = (idToRemove) => {
+    const updatedComments = comments.filter(
+      (comment) => comment.id !== idToRemove
+    );
+    setComments(updatedComments);
+  };
+
   return (
     <div>
-      {comments.map((comment, i) => {
-        return (
-          <Comment name={comment.name} comment={comment.comment} key={i} />
-        );
-      })}
+      {comments.map((comment) => (
+        <Comment
+          key={comment.id}
+          id={comment.id}
+          name={comment.name}
+          comment={comment.comment}
+          onRemove={handleRemoveComment}
+        />
+      ))}
     </div>
   );
 }
 
-export default CommentList;
+export default App;
