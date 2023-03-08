@@ -17,8 +17,9 @@ const comments = [
 ];
 
 function CommentList() {
-  const [commentList, setCommentList, newCommentText, setNewCommentText] =
-    useState(comments);
+  const [commentList, setCommentList] = useState(comments);
+  const [newCommentText, setNewCommentText] = useState("");
+  const [newCommentName, setNewCommentName] = useState("");
 
   const deleteComment = (index) => {
     const newCommentList = [...commentList];
@@ -37,17 +38,30 @@ function CommentList() {
           />
         );
       })}
+      <h1>이름</h1>
+      <input
+        type="text"
+        value={newCommentText}
+        onChange={(e) => setNewCommentText(e.target.value)}
+      />
 
+      <h1>댓글</h1>
+      <input
+        type="text"
+        value={newCommentName}
+        onChange={(e) => setNewCommentName(e.target.value)}
+      />
       <button
         onClick={() => {
           setCommentList([
-            { name: "김영재", comment: "하기싫다" },
+            { name: newCommentText, comment: newCommentName },
             ...commentList,
           ]);
-          setNewCommentText("");
+          setNewCommentText(""); //이름
+          setNewCommentName(""); //댓글
         }}
       >
-        글 추가
+        <h3>글 추가</h3>
       </button>
     </div>
   );
