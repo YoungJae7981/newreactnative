@@ -17,14 +17,14 @@ const comments = [
 ];
 
 function CommentList() {
-  const [commentList, setCommentList] = useState(comments);
+  const [commentList, setCommentList, newCommentText, setNewCommentText] =
+    useState(comments);
 
   const deleteComment = (index) => {
     const newCommentList = [...commentList];
     newCommentList.splice(index, 1);
     setCommentList(newCommentList);
   };
-
   return (
     <div>
       {commentList.map((comment, i) => {
@@ -37,6 +37,18 @@ function CommentList() {
           />
         );
       })}
+
+      <button
+        onClick={() => {
+          setCommentList([
+            { name: "김영재", comment: "하기싫다" },
+            ...commentList,
+          ]);
+          setNewCommentText("");
+        }}
+      >
+        글 추가
+      </button>
     </div>
   );
 }
