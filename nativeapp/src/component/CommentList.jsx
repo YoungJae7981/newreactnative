@@ -57,6 +57,9 @@ function CommentList() {
             { name: newCommentText, comment: newCommentName },
             ...commentList,
           ]);
+          // State변경 함수에 빈 문자열을 넣어서 input에 작성된 내용을 초기화
+          // // onChange 이벤트는 input요소에서 값이 변경될때변경
+          // 그떄 발생한 이벤트를 매개변수 e
           setNewCommentText(""); //이름
           setNewCommentName(""); //댓글
         }}
