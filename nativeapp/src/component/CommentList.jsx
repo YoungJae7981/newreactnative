@@ -53,10 +53,14 @@ function CommentList() {
       />
       <button
         onClick={() => {
-          setCommentList([
-            { name: newCommentText, comment: newCommentName },
-            ...commentList,
-          ]);
+          // iife ()
+          newCommentText === "" || newCommentName === ""
+            ? // 버튼을 클릭했을떄 이름과 댓글중에 어느하나가 true인경우 실행함
+              alert("이름과 댓글을 입력하세요")
+            : setCommentList([
+                { name: newCommentText, comment: newCommentName },
+                ...commentList,
+              ]);
           // State변경 함수에 빈 문자열을 넣어서 input에 작성된 내용을 초기화
           // // onChange 이벤트는 input요소에서 값이 변경될때변경
           // 그떄 발생한 이벤트를 매개변수 e
